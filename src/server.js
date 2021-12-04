@@ -1,9 +1,11 @@
 const express=require('express');
+var path = require('path');
 const mongoose = require('mongoose');
 const { config } = require('dotenv');
 config();
-const bodyParser=require('body-parser')
+const bodyParser=require('body-parser');
 const app=express();
+const expressHbs=require('hbs')
 
 const indexRouter=require('./routers/index');
 
@@ -21,8 +23,11 @@ mongoose.connect(url,{ useNewUrlParser: true,useUnifiedTopology: true },(err)=>{
 
 app.use(bodyParser.urlencoded(
     {extended:true}
-))    
+))
 app.use(bodyParser.json())
+app.set('view engine', 'hbs');
+app.set('views',path.join(__dirname,'views'))
+
 app.use('/',indexRouter)
 
-app.listen(5000,console.log(`started the server ${port}`))
+app.listen(port,console.log(`started the server ${port}`))
