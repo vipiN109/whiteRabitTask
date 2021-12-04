@@ -70,10 +70,7 @@ return (
             <td>{employee.firstName}</td>
             <td>{employee.email}</td>
             <td>
-                <Link to={"/edit/" + employee._id} className="btn btn-primary">Edit</Link>
-            </td>
-            <td>
-                <Button onClick={() => this.deleteEmployee(employee._id)} bsStyle="danger">Delete</Button>
+                <Link to={"/edit/" + employee._id} className="btn btn-primary">view details</Link>
             </td>
 
         </tr></>
