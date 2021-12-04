@@ -97,7 +97,7 @@ import React, { Component } from 'react';
           <label>
           Phone No
           <input
-          name="phone"
+          name="phone" 
           type="text"
           value={this.state.phone}
           onChange={this.handleChange}
