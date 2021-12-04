@@ -4,7 +4,7 @@ const userModel=require('../models/user')
 exports.create=async (req,res)=>{
     const existingUser=await userModel.findOne({email:req.body.email})
     
-    if(existingUser){ 
+    if(existingUser){
         res.json({user:true,message:"user is exist"})
     }
     else{
@@ -17,8 +17,9 @@ exports.create=async (req,res)=>{
             experience:req.body.experience,
             achievements:req.body.achievements
         }
+
         if(!data.firstName||!data.lastName||!phone){
-            res.json({result:false,message:"put all the fields"})
+            res.json({result:false,message:"fill all the fields"})
         }else{
             const user=new userModel(data)
             await user.save().then((user)=>{

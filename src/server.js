@@ -5,8 +5,6 @@ const { config } = require('dotenv');
 config();
 const bodyParser=require('body-parser');
 const app=express();
-const expressHbs=require('hbs')
-
 const indexRouter=require('./routers/index');
 
 const port=process.env.PORT || 5000
@@ -25,8 +23,6 @@ app.use(bodyParser.urlencoded(
     {extended:true}
 ))
 app.use(bodyParser.json())
-app.set('view engine', 'hbs');
-app.set('views',path.join(__dirname,'views'))
 
 app.use('/',indexRouter)
 
