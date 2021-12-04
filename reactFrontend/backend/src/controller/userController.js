@@ -23,7 +23,8 @@ exports.create=async (req,res)=>{
         if(!data.firstName||!data.lastName||!data.introduction){
             res.json({result:false,message:"fill all the fields"})
         }
-        else if(!data.email||!data.phone||!data.experience||!data.achievements){
+        else if(!data.email||!data.phone||!data.experience||!data.achievements)
+        {
             res.json({result:false,message:"fill all the fields"})
         }
         else{
