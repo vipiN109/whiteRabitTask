@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css"
-import TodoList from "./components/list"
+import listOfUsers from "./components/list"
 import EditTodo from "./components/view"
 import CreateTodo from "./components/create"
 class App extends Component {
@@ -27,7 +27,7 @@ class App extends Component {
     </ul>
   </div>
 </nav>
-        <Route path="/" exact component={TodoList}/>
+        <Route path="/" exact component={listOfUsers}/>
         <Route path="/edit/:id" exact component={EditTodo}/>
         <Route path="/create" exact component={CreateTodo}/>
         </Router>

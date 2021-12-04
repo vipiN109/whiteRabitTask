@@ -20,14 +20,18 @@ exports.create=async (req,res)=>{
 
         console.log(data)
 
-        // if(!data.firstName||!data.lastName){
-        //     res.json({result:false,message:"fill all the fields"})
-        // }else{
+        if(!data.firstName||!data.lastName||!data.introduction){
+            res.json({result:false,message:"fill all the fields"})
+        }
+        else if(!data.email||!data.phone||!data.experience||!data.achievements){
+            res.json({result:false,message:"fill all the fields"})
+        }
+        else{
             const user=new userModel(data)
             await user.save().then((user)=>{
             res.json({result:false,message:"user created"})
             })
-        // }
+        }
     }
 }
 

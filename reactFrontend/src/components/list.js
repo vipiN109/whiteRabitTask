@@ -11,7 +11,7 @@ var divStyle = {
 margin: '8% 8%',
 };
 
-class ListEmployee extends Component {
+class listOfUsers extends Component {
 
 constructor(props) {
 super(props);
@@ -87,4 +87,4 @@ return (
 } 
 }
 
-export default ListEmployee;
+export default listOfUsers;
